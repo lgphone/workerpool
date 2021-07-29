@@ -1,4 +1,6 @@
 # workerpool
+[![License](https://img.shields.io/badge/license-GPL-blue.svg)](https://github.com/lgphone/workerpool/blob/main/LICENSE)
+
 方便的控制go协程并发数,并收集go协程出现的异常
 
 
