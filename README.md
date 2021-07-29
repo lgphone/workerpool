@@ -4,7 +4,9 @@
 
 # 安装  Installation
 To install this package, you need to setup your Go workspace. The simplest way to install the library is to run:
-```shell go get github.com/lgphone/workerpool```
+```shell 
+go get github.com/lgphone/workerpool
+```
 
 # 示例 Example
 ```go
