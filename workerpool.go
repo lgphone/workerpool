@@ -11,18 +11,16 @@ type workerPool struct {
 }
 
 func (s *workerPool) Submit(fn func()) {
-	s.ch <- true
 	go func() {
-		defer func() {
-			<-s.ch
-		}()
 		defer func() {
 			if err := recover(); err != nil {
 				s.mutex.Lock()
 				s.errs = append(s.errs, err.(error))
 				s.mutex.Unlock()
 			}
+			<-s.ch
 		}()
+		s.ch <- true
 		fn()
 	}()
 }
